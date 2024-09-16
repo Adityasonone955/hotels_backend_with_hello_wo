@@ -14,11 +14,9 @@ router.post('/', async (req, res) => {
       const response = await newPerson.save();
       console.log('Data Saved');
       res.status(200).json(response);
-    }catch(err){
+    } catch (err) {
       console.log(err);
-      res.status(500).json({errro: 
-        'Internal serve Error'
-      });
+      res.status(500).json({errro: 'Internal serve Error'  });
     }
 })
 
@@ -73,7 +71,7 @@ router.put('/:id',async (req, res) => { // id ko kuch bhi name de sakte hai
     console.log('Data Updated');
     res.status(200).json(response);
 
-  }catch(err){ 
+  } catch(err){ 
     console.log(err);
     res.status(500).json({error: 'Internal Server Error'});
   }
