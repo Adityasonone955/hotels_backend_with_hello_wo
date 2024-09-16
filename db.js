@@ -7,11 +7,9 @@ require('dotenv').config();
 const mongoURL = process.env.MONGODB_URL; // online mongodb atlas connection
   
 // Set up MongoDB connection
-mongoose.connect(mongoURL, {
-  // useNewUrlParser: true,
-  //  useUnifiedTopology: true
-  
-});
+mongoose.connect(mongoURL, { useNewUrlParser: true,
+     useUnifiedTopology: true
+     });
 
 // Get the default connetion
 // Mongoose maintains a defaul connection object representing the MongoDB connection .
