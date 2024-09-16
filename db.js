@@ -3,13 +3,15 @@ require('dotenv').config();
 
 //define the MongoDB connection URL
 
-// const mongoURL =  process.env.MONGODB_URL_LOCAL  // local mongodb compass connection
+// const MONGODB_URL_LOCAL =  process.env.MONGODB_URL_LOCAL  // local mongodb compass connection
 const mongoURL = process.env.MONGODB_URL; // online mongodb atlas connection
   
 // Set up MongoDB connection
-mongoose.connect(mongoURL, { useNewUrlParser: true,
-     useUnifiedTopology: true
-     });
+mongoose.connect(mongoURL, {
+  // useNewUrlParser: true,
+  //  useUnifiedTopology: true
+  
+});
 
 // Get the default connetion
 // Mongoose maintains a defaul connection object representing the MongoDB connection .
