@@ -3,9 +3,9 @@ const app = express();
 const db = require ('./db') // import from db.js file
 require('dotenv').config();
 const passport = require('./authe')
+
 const bodyParser = require("body-parser");
 app.use(bodyParser.json()); // body-parser store a json formate in req.body
-
 const PORT = process.env.PORT || 3000;
 
 // Middlewear Function
@@ -27,9 +27,8 @@ const personRoutes = require('./routes/personRoutes');
 const menuRoutes = require("./routes/menuRoutes");
 
 // use the routers
-app.use("/person",localAuthmiddleware, personRoutes);
-app.use("/menu", menuRoutes);
-
+app.use("/person", personRoutes);
+app.use("/menu", menuRoutes); 
 // localAuthmiddleware;
 
 app.listen(PORT, () => {
